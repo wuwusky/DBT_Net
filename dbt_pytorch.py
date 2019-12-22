@@ -171,7 +171,7 @@ class Bottleneck(nn.Module):
         if self.use_SG_GB:
             self.SG = GroupConv(inplanes, planes, featuremap_size, 16)
             self.GB = GroupBillinear(16, featuremap_size, planes)
-            self.conv1 = conv1x1(planes, planes)
+            self.conv1 = conv3x3(planes, planes)
         else:
             self.conv1 = conv1x1(inplanes, planes)
 
